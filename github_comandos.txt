@@ -28,5 +28,7 @@ bash
 	git pull origin main
 
 
-
-git log //ver el historial
+ADICIONAL:
+ flutter pub get //PARA RESOLVER DEPENDENCIAS
+ git log //ver el historial
+ git fetch //PARA VER ACTUALIZACION SIN DESCARGAR
