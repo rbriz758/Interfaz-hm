@@ -1,0 +1,32 @@
+Comandos rápidos para Git
+Subir cambios por primera vez:
+bash
+
+	git add .
+	git commit -m "Mi primer commit"
+	git push origin main
+
+
+Flujo normal de trabajo:
+bash
+# 1. Ver estado de los archivos
+	git status
+
+# 2. Añadir archivos al staging
+	git add nombre-archivo.txt
+# o añadir todos:
+	git add .
+
+# 3. Hacer commit
+	git commit -m "Descripción del cambio"
+
+# 4. Subir a GitHub
+	git push origin main
+Actualizar repositorio local:
+bash
+# Descargar últimos cambios
+	git pull origin main
+
+
+
+git log //ver el historial
