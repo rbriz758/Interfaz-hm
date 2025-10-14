@@ -8,12 +8,21 @@ class MainView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[850],
-      appBar: AppBar(title: const Text('Cines BRIMAS')),
+      appBar: AppBar(
+        title: const Text(
+          'Cines BRIMAS',
+          style: TextStyle(
+            fontFamily: 'RobotoSlab',
+            fontSize: 22,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+        backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // Texto de bienvenida
             Container(
               padding: const EdgeInsets.all(16),
               margin: const EdgeInsets.only(bottom: 30),
@@ -27,8 +36,6 @@ class MainView extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
             ),
-
-            // Botón interactivo
             GestureDetector(
               onTap: () {
                 Navigator.push(
@@ -37,7 +44,8 @@ class MainView extends StatelessWidget {
                 );
               },
               child: Container(
-                padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 24),
+                padding:
+                    const EdgeInsets.symmetric(vertical: 12, horizontal: 24),
                 decoration: BoxDecoration(
                   color: Colors.orange,
                   borderRadius: BorderRadius.circular(12),
