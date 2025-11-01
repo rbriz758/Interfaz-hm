@@ -10,14 +10,17 @@ class MainView extends StatelessWidget {
       backgroundColor: Colors.grey[850],
       appBar: AppBar(
         title: const Text(
-          'Cines BRIMAS',
+          'BRIMAS +',
           style: TextStyle(
             fontFamily: 'RobotoSlab',
             fontSize: 22,
             fontWeight: FontWeight.w600,
+            color: Colors.white,
           ),
         ),
-        backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+        backgroundColor: Colors.black,
+        iconTheme: const IconThemeData(color: Colors.white),
+        centerTitle: true,
       ),
       body: Center(
         child: Column(
@@ -47,7 +50,7 @@ class MainView extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(vertical: 12, horizontal: 24),
                 decoration: BoxDecoration(
-                  color: Colors.orange,
+                  color: Colors.green,
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: const Text(
