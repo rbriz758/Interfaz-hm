@@ -11,20 +11,21 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:isaacperezmascaro_rodrigobrizramos_p1/main.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
+  testWidgets('Navigate to list view and show items', (WidgetTester tester) async {
     await tester.pumpWidget(const MyApp());
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+    // Should show welcome text on the main screen
+    expect(find.text('Bienvenido espectador'), findsOneWidget);
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
+    // Tap the button that navigates to the list
+    final verPeliculas = find.text('Ver películas');
+    expect(verPeliculas, findsOneWidget);
+    await tester.tap(verPeliculas);
+    await tester.pumpAndSettle();
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    // Now we should be on the list screen and find the title
+    expect(find.text('Películas disponibles'), findsOneWidget);
+    // There should be at least one item from the generated list
+    expect(find.byType(ListView), findsOneWidget);
   });
 }
