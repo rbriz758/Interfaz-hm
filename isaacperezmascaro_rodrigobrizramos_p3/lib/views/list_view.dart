@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import '../models/item.dart';
 import 'detail_view.dart';
+import 'loading_view.dart';
 
 class ListViewScreen extends StatefulWidget {
   const ListViewScreen({Key? key}) : super(key: key);
@@ -52,7 +53,7 @@ class _ListViewScreenState extends State<ListViewScreen> {
         return GestureDetector(
           onTap: () {
             Navigator.of(context).push(MaterialPageRoute(
-              builder: (_) => DetailView(item: item),
+              builder: (_) => LoadingView(item: item),
             ));
           },
           child: Container(
@@ -65,27 +66,30 @@ class _ListViewScreenState extends State<ListViewScreen> {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(6),
-                  child: Image.asset(
-                    item.imageUrl,
-                    width: 80,
-                    height: 120,
-                    fit: BoxFit.cover,
-                    errorBuilder: (context, error, stackTrace) {
-                      return Container(
-                        width: 80,
-                        height: 120,
-                        color: Colors.black26,
-                        child: const Center(
-                          child: Icon(
-                            Icons.image_not_supported,
-                            color: Colors.white54,
-                            size: 28,
+                Hero(
+                  tag: item.id,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(6),
+                    child: Image.asset(
+                      item.imageUrl,
+                      width: 80,
+                      height: 120,
+                      fit: BoxFit.cover,
+                      errorBuilder: (context, error, stackTrace) {
+                        return Container(
+                          width: 80,
+                          height: 120,
+                          color: Colors.black26,
+                          child: const Center(
+                            child: Icon(
+                              Icons.image_not_supported,
+                              color: Colors.white54,
+                              size: 28,
+                            ),
                           ),
-                        ),
-                      );
-                    },
+                        );
+                      },
+                    ),
                   ),
                 ),
                 const SizedBox(width: 12),
