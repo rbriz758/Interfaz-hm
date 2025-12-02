@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      title: 'P1 IPC',
+      title: 'P3 IPC',
       debugShowCheckedModeBanner: false,
       home: LoginView(),
     );
